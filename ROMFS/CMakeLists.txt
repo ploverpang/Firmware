@@ -63,7 +63,7 @@ function(px4_add_romfs_files)
 			)
 	endforeach()
 
-	set(config_romfs_files_list ${config_romfs_files_list} CACHE INTERNAL "ROMFS file list")
+	set(config_romfs_files_list ${config_romfs_files_list} "ROMFS file list")
 endfunction()
 
 # get list of all ROMFS files
@@ -72,6 +72,7 @@ add_subdirectory(${romfs_src_dir})
 # directory setup
 # copy all romfs files, process airframes, prune comments
 add_custom_command(OUTPUT ${romfs_temp_dir}/init.d/rcS ${romfs_temp_dir}/init.d/rc.autostart
+	COMMAND cmake -E remove_directory ${romfs_temp_dir}
 	COMMAND cmake -E copy_directory ${romfs_src_dir} ${romfs_temp_dir}
 	COMMAND ${PYTHON_EXECUTABLE} ${PX4_SOURCE_DIR}/Tools/px_process_airframes.py
 		-a ${romfs_temp_dir}/init.d

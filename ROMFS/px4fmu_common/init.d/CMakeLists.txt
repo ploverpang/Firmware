@@ -32,8 +32,6 @@
 ############################################################################
 
 px4_add_romfs_files(
-	1000_rc_fw_easystar.hil
-	1001_rc_quad_x.hil
 	2100_standard_plane
 	2105_maja
 	2106_albatross
@@ -60,7 +58,6 @@ px4_add_romfs_files(
 	4020_hk_micro_pcb
 	4030_3dr_solo
 	4031_3dr_quad
-	4040_reaper
 	4050_generic_250
 	4051_s250aq
 	4060_dji_matrice_100
