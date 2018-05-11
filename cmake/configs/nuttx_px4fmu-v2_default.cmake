@@ -171,4 +171,8 @@ set(config_module_list
 
 	# Hardware test
 	#examples/hwtest
+
+	# Pangbo's test code
+	#examples/my_test_app
+
 )
